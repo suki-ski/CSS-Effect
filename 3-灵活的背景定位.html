@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: url(ErisOVO.jpg) no-repeat #74dab3
+                        right bottom;
+            background-size: 100px 100px;
+            /* background-position: 10px 10px; */
+            /* 拓展语法对齐到右下角，并留下一定的距离 */
+
+            /* background-position的拓展语法方案 */
+            /* background-position: right 10px bottom 10px; */
+
+            /* 在给背景图片设置距离某个角的偏移量时，有一种情况极其常见：偏移量与容器的内边距一致 */
+            /* 如果采用background-position方案代码会是这样 */
+            /* padding: 10px;
+            background-position: right 10px bottom 10px; */
+
+            /* background-origin方案： */
+            /* padding: 10px;
+            background-origin: content-box; */
+
+            /* calc()方案 */
+            padding: 10px;
+            background-position: calc(100% - 10px) calc(100% - 10px);
+            /* 注意一定要敲空格 */
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
