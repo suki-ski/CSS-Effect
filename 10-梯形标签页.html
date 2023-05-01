@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* 通过transform中的3D旋转方式实现 */
+        /* 对元素使用了 3D变形之后，其内部的变形效应是“不可逆转”的 */
+        /* 这里的字体就被扭曲了 */
+        .by3D {
+            display: flex;
+            width: 200px;
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+            /* transform: perspective(0.5em) rotateX(5deg); */
+
+            background: #58a;
+            /* 将文本转换成大写 */
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 25px;
+            font-weight: bolder;
+            color: white;
+        }
+
+        /* 伪元素是指在该元素的里面创建元素 */
+        /* 类似书签的效果 */
+        .Pseudo-element {
+            position: relative;
+            display: flex;
+            width: 200px;
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+            border-radius: .5em .5em 0 0;
+            background: #58a;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 25px;
+            font-weight: bolder;
+            color: white;
+        }
+        .Pseudo-element::before {
+            content: "";
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            z-index: -1;
+            background-color: #58a;
+            transform: scaleY(1.32) scaleX(1.35) perspective(.5em) rotateX(5deg);
+            /* 当我们没有设置 transform-origin 属性时，
+            应用变形效果会让这个元素以它自身的中心线为轴进行空间上的旋转 */
+            transform-origin: bottom;
+            border-radius: .5em .5em 0 0;
+            /* border-radius: ; */
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="by3D">
+        trapezoid
+    </div> -->
+    <div class="Pseudo-element">
+        trapezoid
+    </div>
+</body>
+</html>

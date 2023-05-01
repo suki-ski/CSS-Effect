@@ -1,0 +1,63 @@
+<!-- 这个效果也蛮好看 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+        .filter {
+            background: hsl(0, 0%, 0%);
+        }
+        .filter > img {
+            /* 清除图片的空隙 */
+            display: block;
+            margin: 0;
+            /* 元素的混合模式   */
+            /* 当一个元素设置了 mix-blend-mode 属性时，
+            它会与它的兄弟元素、父元素或者其它元素进行混合，
+            从而产生一种新的效果。
+            混合的效果是通过计算元素的颜色值和透明度来实现的。 */
+            /* 兄弟元素,父元素的混合模式 */
+            mix-blend-mode: luminosity;
+            width: 100px;
+            height: 100px;
+        }
+        .tinted-img {
+            width: 100px;
+            height: 100px;
+            clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%);
+            background-image: url("ErisOVO.jpg");
+            /* 让图片完全覆盖 */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: hsl(0, 0%, 0%);
+            /* 背景混合模式 */
+            background-blend-mode: luminosity;
+            /* 动画效果 */
+            transition: 1s background-color, 1s clip-path;
+        }
+        .tinted-img:hover {
+            background-color: transparent;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+    </style>
+</head>
+<body>
+    <!-- 两个元素实现滤镜效果 -->
+    <!-- <div class="filter">
+        <img src="ErisOVO.jpg" alt="">
+    </div> -->
+    <!-- 一个元素实现滤镜效果 -->
+    <div class="tinted-img"></div>
+</body>
+</html>
