@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+        .pie-chart {
+            width: 100px;
+            height: 100px;
+            clip-path: circle(at center);
+
+            background-color: orange;
+        }
+        .pie {
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            background-color: yellowgreen;
+            background-image: linear-gradient(to right, transparent 50%, #655 0);
+        }
+        /* 基于transform的解决方案 */
+        .pie::before {
+            content: "";
+            display: block;
+            height: 100%;
+            margin-left: 50%;
+            background-color: inherit;
+            /* 右侧椭圆 */
+            /* 以斜杠为分隔符号左边表示水平半径，右边表示垂直半径 */
+            border-radius: 0 100% 100% 0/0 50% 50% 0;
+            transform-origin: left;
+            transform: rotate(70deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="pie-chart"></div> -->
+    <div class="pie"></div>
+</body>
+</html>

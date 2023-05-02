@@ -5,8 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background: url(./eris.jpg) 0 / cover fixed;
+        }
+        main {
+            position: relative;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            height: 250px;
+            background-color: hsla(0,0%,100%,0.3);
+            box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.336);
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        main::before {
+            content: "";
+            position: absolute;
+            left: 0; top: 0; right: 0; bottom: 0;
+            background: url(./eris.jpg) 0 / cover fixed;
+            filter: blur(7px);
+            margin: -30px;
+        }
+        blockquote {
+            position: relative;
+            font-size: 20px;
+            color: white;
+        }
+        footer>cite {
+            font-size: 14px;
+            color: rgb(197, 197, 197);
+        }
+    </style>
 </head>
 <body>
-    
+    <main>
+        <blockquote>
+            让你久等了
+            <footer>
+                <cite>——Eris</cite>
+            </footer>
+        </blockquote>
+    </main>
 </body>
 </html>
