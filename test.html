@@ -5,11 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .vertical-align {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: url("ErisOVO.jpg") 0 / cover no-repeat;
+            background-color: hsla(0,0%,100%,0.3);
+        }
+        .test {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: hsla(0,0%,100%,0.2);
+            overflow: hidden;
+        }
+        .test::before {
+            content: "";
+            position: absolute;
+            /* 这里的作用是使伪元素大小和元素大小一致 */
+            left: 0;top: 0;right: 0;bottom: 0;
+            background: url("ErisOVO.jpg") center / 200px 200px no-repeat;
+            margin: -30px;
+            filter: blur(3px);
+        }
+        blockquote {
+            position: relative;
+        }
+    </style>
 </head>
 <body>
-    <input type="text">
+    <div class="box vertical-align">
+        <div class="test vertical-align">
+            <blockquote>
+                ERIS
+            </blockquote>
+        </div>
+    </div>
 </body>
-<script>
-    document.querySelector("input").focus();
-</script>
 </html>

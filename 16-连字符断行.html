@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background: url(./eris.jpg) 0/cover;
+        }
+        h4 {
+            margin: 0;
+            padding: 0;
+        }
+        .vertical-align {
+            display: flex;
+            flex-flow: column nowrap;   
+            justify-content: center;
+            align-items: center;
+        }
+        .font {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+        .init {
+            width: 200px;
+            height: 150px;
+            background-color: hsla(0,0%,100%,0.3);
+        }
+        .question {
+            /* 两端对齐：不完美 */
+            text-align: justify;
+        }
+        .solution {
+            /* 解决办法：使用CSS3的hyphens */
+            /* 有三个属性值：none,manual(默认),auto */
+            hyphens: auto;
+        }
+    </style>
+</head>
+<body>
+    <blockquote class="question vertical-align font init">
+        <h4>问题:</h4>
+        it is most important that is give and take.
+    </blockquote>
+    <blockquote class="solution vertical-align font init">
+        it is most important that is give and take.
+    </blockquote>
+</body>
+</html>
